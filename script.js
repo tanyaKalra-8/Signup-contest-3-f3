@@ -8,8 +8,20 @@ let userDetails = document.getElementById("user-details");
 
 let userData ={};
 
+let arr = ['1','2','3','4','5','6','7','8','9','0','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+
+function generateToken(){
+    let token = "";
+    for(let i=0; i<12; i++){
+        let randomIndex = Math.floor(Math.random() * arr.length);
+        token += arr[randomIndex];
+    }
+    return token;
+}
+
 //this is the access token
 const generatedToken = generateToken();
+console.log(generatedToken);
 
 // function to check that if the access token is present or not
 function isAuthenticated(){
@@ -104,10 +116,10 @@ function logout(){
 }
 
 // function to generate access token
-function generateToken(length=10){
-  const tokens = new Uint8Array(length);
-  crypto.getRandomValues(tokens);
+// function generateToken(length=10){
+//   const tokens = new Uint8Array(length);
+//   crypto.getRandomValues(tokens);
 
-  const token = Array.from(tokens, byte => byte.toString(16).padStart(2, '0')).join('');
-  return token;
-}
+//   const token = Array.from(tokens, byte => byte.toString(16).padStart(2, '0')).join('');
+//   return token;
+// }
