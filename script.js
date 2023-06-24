@@ -21,7 +21,6 @@ function generateToken(){
 
 //this is the access token
 const generatedToken = generateToken();
-console.log(generatedToken);
 
 // function to check that if the access token is present or not
 function isAuthenticated(){
@@ -110,16 +109,8 @@ function atProfile(){
 
 }  
 
+
 function logout(){
   localStorage.removeItem('userData');
   window.location.href = 'index.html';
 }
-
-// function to generate access token
-// function generateToken(length=10){
-//   const tokens = new Uint8Array(length);
-//   crypto.getRandomValues(tokens);
-
-//   const token = Array.from(tokens, byte => byte.toString(16).padStart(2, '0')).join('');
-//   return token;
-// }
